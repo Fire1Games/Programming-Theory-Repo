@@ -9,7 +9,7 @@ public class ParentHelloClass : MonoBehaviour
     public static Text MainText { get; private set; }
     public static Text GreetText { get; private set; }
 
-    // Start is called before the first frame update
+
     void Start()
     {
         MainText = GameObject.Find("Main TextBox").GetComponent<Text>();
@@ -18,15 +18,19 @@ public class ParentHelloClass : MonoBehaviour
         MainHello();
     }
 
+
     private void MainHello()
     {
         MainText.gameObject.SetActive(true);
         MainText.text = "Greetings, we are the Magnificent 3!";
     }
 
+
     public virtual void Greet()
     {
+        MainText.gameObject.SetActive(false);
         GreetText.gameObject.SetActive(true);
+        GreetText.color = Color.red;
         GreetText.text = "Hello, My name is Red";
     }
 }

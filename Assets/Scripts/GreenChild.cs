@@ -2,28 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class RedChildHelloClass : ParentHelloClass
+public class GreenChild : ParentHelloClass
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Ground"))
         {
-            MainText.gameObject.SetActive(false);
             Greet();
-            
         }
     }
 
@@ -31,8 +16,15 @@ public class RedChildHelloClass : ParentHelloClass
     {
         if (!other.CompareTag("Ground"))
         {
-            GreetText.gameObject.SetActive(false);
             MainText.gameObject.SetActive(true);
+            GreetText.gameObject.SetActive(false);
         }
+    }
+    public override void Greet()
+    {
+        MainText.gameObject.SetActive(false);
+        GreetText.gameObject.SetActive(true);
+        GreetText.color = Color.green;
+        GreetText.text = "Hello, My name is Green";
     }
 }
