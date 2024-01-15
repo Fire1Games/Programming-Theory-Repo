@@ -2,12 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueChild : ParentHelloClass
+public class BlueChild : ParentClass
 {
+    private float newRotateSpeed = 60.0f;
+
+    private void Update()
+    {
+        if (isColliding)
+        {
+            RotateObject();
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Ground"))
         {
+            isColliding = true;
             Greet();
         }
     }
@@ -16,6 +27,7 @@ public class BlueChild : ParentHelloClass
     {
         if (!other.CompareTag("Ground"))
         {
+            isColliding = false;
             MainText.gameObject.SetActive(true);
             GreetText.gameObject.SetActive(false);
         }
@@ -26,6 +38,11 @@ public class BlueChild : ParentHelloClass
         MainText.gameObject.SetActive(false);
         GreetText.gameObject.SetActive(true);
         GreetText.color = Color.blue;
-        GreetText.text = "Hello, My name is Blue";
+        GreetText.text = "Hello, My name is Sapphire. I can backflip!";
+    }
+
+    public override void RotateObject()
+    {
+        transform.Rotate(Vector3.right * newRotateSpeed * Time.deltaTime);
     }
 }

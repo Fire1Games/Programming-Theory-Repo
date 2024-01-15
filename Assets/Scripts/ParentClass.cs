@@ -1,13 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 
-public class ParentHelloClass : MonoBehaviour
+public class ParentClass : MonoBehaviour
 {
     public static Text MainText { get; private set; }
     public static Text GreetText { get; private set; }
+
+    private float rotateSpeed = 30.0f;
+
+    public bool isColliding = false;
 
 
     void Start()
@@ -31,6 +36,11 @@ public class ParentHelloClass : MonoBehaviour
         MainText.gameObject.SetActive(false);
         GreetText.gameObject.SetActive(true);
         GreetText.color = Color.red;
-        GreetText.text = "Hello, My name is Red";
+        GreetText.text = "Hello, My name is Ruby. I can spin!";
+    }
+
+    public virtual void RotateObject()
+    {
+        transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
     }
 }
