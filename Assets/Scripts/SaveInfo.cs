@@ -5,6 +5,8 @@ using UnityEngine;
 public class SaveInfo : MonoBehaviour
 {
     public static SaveInfo Instance;
+    public string currentPlayer;
+
     private void Awake()
     {
         //Create instance on awake, destroys any extra instances, doesn't destroy instance between scenes
