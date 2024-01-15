@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlueChild : ParentClass
 {
-    private float newRotateSpeed = 60.0f;
+    private readonly float newRotateSpeed = 300.0f;
 
     private void Update()
     {
@@ -38,7 +38,7 @@ public class BlueChild : ParentClass
         MainText.gameObject.SetActive(false);
         GreetText.gameObject.SetActive(true);
         GreetText.color = Color.blue;
-        GreetText.text = "Hello, My name is Sapphire. I can backflip!";
+        GreetText.text = "Hello " + SaveInfo.Instance.currentPlayer + ", My name is Sapphire.\nI can backflip!";
     }
 
     public override void RotateObject()

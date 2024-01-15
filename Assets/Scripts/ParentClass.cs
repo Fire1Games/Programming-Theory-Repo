@@ -9,9 +9,8 @@ public class ParentClass : MonoBehaviour
 {
     public static Text MainText { get; private set; }
     public static Text GreetText { get; private set; }
-
-    private float rotateSpeed = 30.0f;
-
+    public static float RotateSpeed { get; private set; }
+    
     public bool isColliding = false;
 
 
@@ -19,6 +18,8 @@ public class ParentClass : MonoBehaviour
     {
         MainText = GameObject.Find("Main TextBox").GetComponent<Text>();
         GreetText = GameObject.Find("Child TextBox").GetComponent<Text>();
+
+        RotateSpeed = 250.0f;
 
         MainHello();
     }
@@ -36,11 +37,11 @@ public class ParentClass : MonoBehaviour
         MainText.gameObject.SetActive(false);
         GreetText.gameObject.SetActive(true);
         GreetText.color = Color.red;
-        GreetText.text = "Hello, My name is Ruby. I can spin!";
+        GreetText.text = "Hello " + SaveInfo.Instance.currentPlayer + ", My name is Ruby.\nI can spin!";
     }
 
     public virtual void RotateObject()
     {
-        transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up * RotateSpeed * Time.deltaTime);
     }
 }
