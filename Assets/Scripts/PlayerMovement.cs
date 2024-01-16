@@ -11,21 +11,18 @@ public class PlayerMovement : MonoBehaviour
     private float screenBoundaryZTop = 11.0f;
     private float screenBoundaryZBottom = -1.5f;
 
-    // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        
+        UserMovement();    //Abstraction
+        CheckScreenBoundary();    //Abstraction
     }
 
-    // Update is called once per frame
-    void Update()
+    private void UserMovement()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
-
-        CheckScreenBoundary();
     }
 
     private void CheckScreenBoundary()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueChild : ParentClass
+public class BlueChild : ParentClass    //Inheritance
 {
     private readonly float newRotateSpeed = 300.0f;
 
@@ -19,7 +19,7 @@ public class BlueChild : ParentClass
         if (!other.CompareTag("Ground"))
         {
             isColliding = true;
-            Greet();
+            Greet();    //Abstraction
         }
     }
 
@@ -33,7 +33,7 @@ public class BlueChild : ParentClass
         }
     }
 
-    public override void Greet()
+    public override void Greet()    //Polymorphism
     {
         MainText.gameObject.SetActive(false);
         GreetText.gameObject.SetActive(true);
@@ -41,7 +41,7 @@ public class BlueChild : ParentClass
         GreetText.text = "Hello " + SaveInfo.Instance.currentPlayer + ", My name is Sapphire.\nI can backflip!";
     }
 
-    public override void RotateObject()
+    public override void RotateObject()    //Polymorphism
     {
         transform.Rotate(Vector3.right * newRotateSpeed * Time.deltaTime);
     }

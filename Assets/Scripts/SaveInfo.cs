@@ -17,6 +17,5 @@ public class SaveInfo : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
     }
 }

@@ -7,10 +7,10 @@ using UnityEngine.UI;
 
 public class ParentClass : MonoBehaviour
 {
-    public static Text MainText { get; private set; }
-    public static Text GreetText { get; private set; }
-    public static float RotateSpeed { get; private set; }
-    
+    public static Text MainText { get; private set; }    //Encapsulation
+    public static Text GreetText { get; private set; }    //Encapsulation
+    public static float RotateSpeed { get; private set; }    //Encapsulation
+
     public bool isColliding = false;
 
 
@@ -21,7 +21,7 @@ public class ParentClass : MonoBehaviour
 
         RotateSpeed = 250.0f;
 
-        MainHello();
+        MainHello();    //Abstraction
     }
 
 
@@ -32,7 +32,7 @@ public class ParentClass : MonoBehaviour
     }
 
 
-    public virtual void Greet()
+    public virtual void Greet()    //Polymorphism
     {
         MainText.gameObject.SetActive(false);
         GreetText.gameObject.SetActive(true);
@@ -40,7 +40,7 @@ public class ParentClass : MonoBehaviour
         GreetText.text = "Hello " + SaveInfo.Instance.currentPlayer + ", My name is Ruby.\nI can spin!";
     }
 
-    public virtual void RotateObject()
+    public virtual void RotateObject()    //Polymorphism
     {
         transform.Rotate(Vector3.up * RotateSpeed * Time.deltaTime);
     }

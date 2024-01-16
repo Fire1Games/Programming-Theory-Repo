@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class RedChild : ParentClass
+public class RedChild : ParentClass    //Inheritance
 {
     private void Update()
     {
         if (isColliding)
         {
-            RotateObject();
+            RotateObject();    //Abstraction
         }
     }
 
@@ -18,7 +18,7 @@ public class RedChild : ParentClass
         if (!other.CompareTag("Ground"))
         {
             isColliding = true;
-            Greet();
+            Greet();    //Abstraction
         }
     }
 

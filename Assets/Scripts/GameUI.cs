@@ -1,6 +1,6 @@
 using UnityEngine.SceneManagement;
 
-public class GameUI : MainMenuUI
+public class GameUI : MainMenuUI    //Inheritance
 {
     public void LoadMenu()
     {

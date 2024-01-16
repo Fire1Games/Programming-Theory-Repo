@@ -18,7 +18,6 @@ public class MainMenuUI : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-
     public void QuitAppButton()
     {
         {

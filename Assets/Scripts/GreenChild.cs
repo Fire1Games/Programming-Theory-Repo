@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GreenChild : ParentClass
+public class GreenChild : ParentClass    //Inheritance
 {
     private readonly float newRotateSpeed = 150.0f;
 
@@ -10,7 +10,7 @@ public class GreenChild : ParentClass
     {
         if (isColliding)
         {
-            RotateObject();
+            RotateObject();    //Abstraction
         }
     }
 
@@ -19,7 +19,7 @@ public class GreenChild : ParentClass
         if (!other.CompareTag("Ground"))
         {
             isColliding = true;
-            Greet();
+            Greet();    //Abstraction
         }
     }
 
@@ -32,7 +32,7 @@ public class GreenChild : ParentClass
             GreetText.gameObject.SetActive(false);
         }
     }
-    public override void Greet()
+    public override void Greet()    //Polymorphism
     {
         MainText.gameObject.SetActive(false);
         GreetText.gameObject.SetActive(true);
@@ -40,7 +40,7 @@ public class GreenChild : ParentClass
         GreetText.text = "Hello " + SaveInfo.Instance.currentPlayer + ", My name is Emerald.\nI can cartwheel!";
     }
 
-    public override void RotateObject()
+    public override void RotateObject()    //Polymorphism
     {
         transform.Rotate(Vector3.forward * newRotateSpeed * Time.deltaTime);
     }
