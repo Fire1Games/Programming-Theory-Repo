@@ -9,7 +9,6 @@ public class SaveInfo : MonoBehaviour
 
     private void Awake()
     {
-        //Create instance on awake, destroys any extra instances, doesn't destroy instance between scenes
         if (Instance != null)
         {
             Destroy(gameObject);

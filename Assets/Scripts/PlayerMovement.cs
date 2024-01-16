@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 5.0f;
     private float screenBoundaryX = 10.0f;
     private float screenBoundaryZTop = 11.0f;
-    private float screenBoundaryZBottom = -3.0f;
+    private float screenBoundaryZBottom = -1.5f;
 
     // Start is called before the first frame update
     void Start()

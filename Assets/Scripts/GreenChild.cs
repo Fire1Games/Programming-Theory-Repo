@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GreenChild : ParentClass
 {
-    private float newRotateSpeed = 90.0f;
+    private readonly float newRotateSpeed = 150.0f;
 
     private void Update()
     {
@@ -37,7 +37,7 @@ public class GreenChild : ParentClass
         MainText.gameObject.SetActive(false);
         GreetText.gameObject.SetActive(true);
         GreetText.color = Color.green;
-        GreetText.text = "Hello, My name is Emerald. I can cartwheel!";
+        GreetText.text = "Hello " + SaveInfo.Instance.currentPlayer + ", My name is Emerald.\nI can cartwheel!";
     }
 
     public override void RotateObject()
